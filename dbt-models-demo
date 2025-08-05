@@ -1,0 +1,6 @@
+-- dbt Model Example
+SELECT 
+    customer_id, 
+    SUM(amount) AS total_spent
+FROM {{ ref('orders') }}
+GROUP BY customer_id;
